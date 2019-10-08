@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_16032/fast"
+/usr/bin/make -f CMakeFiles/cmTC_16032.dir/build.make CMakeFiles/cmTC_16032.dir/build
+make[1]: Entering directory '/home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_16032.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_16032.dir/CheckSymbolExists.c.o   -c /home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_16032
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16032.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_16032.dir/CheckSymbolExists.c.o  -o cmTC_16032 
+CMakeFiles/cmTC_16032.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_16032.dir/build.make:97: recipe for target 'cmTC_16032' failed
+make[1]: *** [cmTC_16032] Error 1
+make[1]: Leaving directory '/home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_16032/fast' failed
+make: *** [cmTC_16032/fast] Error 2
+
+File /home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a7a7d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a7a7d.dir/build.make CMakeFiles/cmTC_a7a7d.dir/build
+make[1]: Entering directory '/home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7a7d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_a7a7d.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a7a7d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7a7d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_a7a7d.dir/CheckFunctionExists.c.o  -o cmTC_a7a7d -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a7a7d.dir/build.make:97: recipe for target 'cmTC_a7a7d' failed
+make[1]: *** [cmTC_a7a7d] Error 1
+make[1]: Leaving directory '/home/animesh/robot_localization_ws/build/robot_localization/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a7a7d/fast' failed
+make: *** [cmTC_a7a7d/fast] Error 2
+
+
